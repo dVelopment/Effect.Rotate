@@ -24,6 +24,8 @@ Available options:
             
 Elements rotated by this effect will get an additional property _rotation, which saves the current rotation value.
 
+Issues with Internet Explorer: as IE7 & IE8 can't CSS-transforms, this effect only works with IE9.
+
 == License
 
 Effect.Rotate is licensed under the terms of the GPL License.
