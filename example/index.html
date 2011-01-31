@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Effect.Rotate</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<script type="text/javascript" src="../lib/prototype.js"></script>
+<script type="text/javascript" src="../lib/effects.js"></script>
+<script type="text/javascript" src="../src/effect.rotate.js"></script>
+
+<script type="text/javascript">
+    //<![CDATA[
+    var currentRotationEffect = false;
+    function rotationDemo() {
+        if (currentRotationEffect)
+        	currentRotationEffect.cancel();
+    
+        var degrees = ($('degrees').value);
+        
+        currentRotationEffect = new Effect.Rotate('rotator', {degrees: degrees});
+    }
+    
+    function resetRotationDemo() {
+        if (currentRotationEffect)
+        	currentRotationEffect.cancel();
+    
+        var element = $('rotator');
+        var currentRotation = element._rotation || 0;
+        var delta = 0 - currentRotation;
+        
+        new Effect.Rotate('rotator', {degrees: delta, duration: 0.4});
+    }
+    //]]>
+</script>
+
+<style type="text/css">
+.center {
+	margin: 20px auto;
+	padding: 0px;
+	width: 960px;
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+* {
+	padding: 0px;
+	margin: 0px;
+}
+
+.rotate-demo-container {
+    width: 800px;
+    margin: 20px auto;
+}
+
+.rotate-demo-controls {
+    float: left;
+    width: 200px;
+}
+
+#rotator {
+    width: 315px;
+    height: 190px;
+    margin: 0px auto;
+}
+
+
+</style>
+
+</head>
+<body>
+<div class="center">
+    <div class="rotate-demo">
+    	<div class="rotate-demo-controls">
+        	<input type="text" value="-40" id="degrees" /><br />
+        	<a href="#" onclick="rotationDemo(); return false;" title="click to start demo">start demo</a><br />
+        	<a href="#" onclick="resetRotationDemo(); return false;" title="reset demo">reset demo</a>
+        </div>
+        <div class="rotate-container">
+            <div id="rotator">
+            	<img src="images/sample/image1-2.jpg" alt="image" />
+            </div>
+        </div>
+    </div>
+</div>		
+			
+</body>
+</html>

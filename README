@@ -1,0 +1,32 @@
+Effect.Rotate is an extension to the popular script.aculo.us javascript framework (see http://script.aculo.us/ ) for dynamically rotating contents.
+
+== Installation/Usage
+Download the latest script.aculo.us package.
+Copy script.aculo.us and effect.rotate.js to a dir
+
+Add the following tags to the HEAD section of your HTML page (prototype is included in the script.aculo.us package):
+
+    <script src="js/prototype.js" type="text/javascript"></script>
+    <script src="js/effects.js" type="text/javascript"></script>
+    <script src="js/effect.rotate.js" type="text/javascript"></script>
+
+use the Effect just like every other script.aculo.us effect:
+
+    new Effect.Rotate('idOfElement');
+    
+Available options:
+    degrees: integer (default: 90)
+        above zero: clockwise
+        below zero: counter clockwise
+    mode: ['relative' | 'absolute'] (default: 'relative')
+            if set to 'relative', the rotation will continue from any previous rotation
+            'absolute' will always start from 0 degrees
+            
+Elements rotated by this effect will get an additional property _rotation, which saves the current rotation value.
+
+== License
+
+Effect.Rotate is licensed under the terms of the GPL License.
+See the included GPL-license.txt file.
+
+The sample image contained in the example folder are licensed under creative commons license.
